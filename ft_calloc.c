@@ -12,61 +12,67 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void *ft_calloc(size_t nmemb, size_t size)
 {
-	if (nmemb == 0 || size == 0) {
-        return NULL;
-    }
+	if (nmemb == 0 || size == 0)
+	{
+		return NULL;
+	}
 
+	void *ptr = malloc(nmemb * size);
 
-    void *ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+	{
+		return NULL;
+	}
 
-    if (ptr == NULL) {
-        return NULL; 
-    }
+	ft_memset(ptr, 0, nmemb * size);
 
-    ft_memset(ptr, 0, nmemb * size);
-
-    return ptr;
+	return ptr;
 }
 
-#include <stdlib.h> 
-#include <string.h> 
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 
-int main() {
-    // Test 1 : Allouer et initialiser un tableau de 5 entiers à zéro
-    int *arr1 = (int *)ft_calloc(5, sizeof(int));
+int main()
+{
+	// Test 1 : Allouer et initialiser un tableau de 5 entiers à zéro
+	int *arr1 = (int *)ft_calloc(5, sizeof(int));
 
-    // Vérifier si tous les éléments du tableau sont à zéro
-    size_t i = 0;
-    while (i < 5) {
-        if (arr1[i] != 0) {
-            printf("Test 1 a échoué : arr1[%zu] n'est pas égal à zéro\n", i);
-            free(arr1);
-            return 1; // Indiquer une erreur
-        }
-        i++;
-    }
+	// Vérifier si tous les éléments du tableau sont à zéro
+	size_t i = 0;
+	while (i < 5)
+	{
+		if (arr1[i] != 0)
+		{
+			printf("Test 1 a échoué : arr1[%zu] n'est pas égal à zéro\n", i);
+			free(arr1);
+			return 1; // Indiquer une erreur
+		}
+		i++;
+	}
 
-    free(arr1);
+	free(arr1);
 
-    // Test 2 : Allouer et initialiser une chaîne de caractères à zéro
-    char *str = (char *)ft_calloc(10, sizeof(char));
+	// Test 2 : Allouer et initialiser une chaîne de caractères à zéro
+	char *str = (char *)ft_calloc(10, sizeof(char));
 
-    // Vérifier si tous les caractères de la chaîne sont à zéro
-    i = 0;
-    while (i < 10) {
-        if (str[i] != 0) {
-            printf("Test 2 a échoué : str[%zu] n'est pas égal à zéro\n", i);
-            free(str);
-            return 1; // Indiquer une erreur
-        }
-        i++;
-    }
+	// Vérifier si tous les caractères de la chaîne sont à zéro
+	i = 0;
+	while (i < 10)
+	{
+		if (str[i] != 0)
+		{
+			printf("Test 2 a échoué : str[%zu] n'est pas égal à zéro\n", i);
+			free(str);
+			return 1; // Indiquer une erreur
+		}
+		i++;
+	}
 
-    free(str);
+	free(str);
 
-    printf("Tous les tests ont réussi.\n");
-    return 0;
+	printf("Tous les tests ont réussi.\n");
+	return 0;
 }

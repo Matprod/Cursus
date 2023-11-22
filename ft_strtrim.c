@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_charset_in(char c, char const *set)
+static	int	ft_charset_in(char c, char const *set)
 {
 	size_t	i;
 
@@ -38,7 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end > start && ft_charset_in(s1[end - 1], set))
 		end--;
-	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -48,34 +48,34 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-#include <stdio.h> 
-#include <stdlib.h> 
+#include <stdio.h>
+#include <stdlib.h>
 
+int main()
+{
+	// Test : Supprimer les espaces au début et à la fin d'une chaîne
+	const char str1[] = "lolluol de lollol";
+	const char set1[] = "lol";
+	char *result1 = ft_strtrim(str1, set1);
 
-int main() {
-    // Test : Supprimer les espaces au début et à la fin d'une chaîne
-    const char str1[] = "   dragon de metal   ";
-    const char set1[] = " ";
-    char *result1 = ft_strtrim(str1, set1);
+	printf("Test 1:\n");
+	printf("Chaîne d'origine : \"%s\"\n", str1);
+	printf("Ensemble de caractères à supprimer : \"%s\"\n", set1);
+	printf("Résultat : \"%s\"\n", result1);
 
-    printf("Test 1:\n");
-    printf("Chaîne d'origine : \"%s\"\n", str1);
-    printf("Ensemble de caractères à supprimer : \"%s\"\n", set1);
-    printf("Résultat : \"%s\"\n", result1);
+	free(result1);
 
-    free(result1);
+	// Test : Supprimer les caractères spécifiés au début et à la fin d'une chaîne
+	const char str2[] = "xxdragon xdex metalxx";
+	const char set2[] = "x";
+	char *result2 = ft_strtrim(str2, set2);
 
-    // Test : Supprimer les caractères spécifiés au début et à la fin d'une chaîne
-    const char str2[] = "xxdragon xdex metalxx";
-    const char set2[] = "x";
-    char *result2 = ft_strtrim(str2, set2);
+	printf("\nTest 2:\n");
+	printf("Chaîne d'origine : \"%s\"\n", str2);
+	printf("Ensemble de caractères à supprimer : \"%s\"\n", set2);
+	printf("Résultat : \"%s\"\n", result2);
 
-    printf("\nTest 2:\n");
-    printf("Chaîne d'origine : \"%s\"\n", str2);
-    printf("Ensemble de caractères à supprimer : \"%s\"\n", set2);
-    printf("Résultat : \"%s\"\n", result2);
+	free(result2);
 
-    free(result2);
-
-    return 0;
+	return 0;
 }
