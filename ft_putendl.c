@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 16:34:31 by matprod           #+#    #+#             */
-/*   Updated: 2023/11/14 16:34:31 by matprod          ###   ########.fr       */
+/*   Created: 2023/11/16 12:55:21 by matprod           #+#    #+#             */
+/*   Updated: 2023/11/16 12:55:21 by matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	const char	nl = '\n';
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	write(fd, s, ft_strlen(s));
+	write(fd, &nl, 1);
 }
 
-#include <stdio.h> 
+/*int main() {
+    // Test : Écrire une chaîne de caractères suivie d'une nouvelle ligne dans la sortie standard (1)
+    char str1[] = "Dragon de metal";
+    ft_putendl_fd(str1, 1);
 
-/*int main()
-{
-    const char str1[] = "four";
-    size_t result1 = ft_strlen(str1);
-
-    printf("Chaîne : %s\n", str1);
-    printf("Longueur : %zu\n", result1);
+	return 0;
 }*/

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_pucharfd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 16:34:31 by matprod           #+#    #+#             */
-/*   Updated: 2023/11/14 16:34:31 by matprod          ###   ########.fr       */
+/*   Created: 2023/11/16 12:53:23 by matprod           #+#    #+#             */
+/*   Updated: 2023/11/16 12:53:23 by matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	write(fd, &c, 1);
 }
 
-#include <stdio.h> 
+#include <unistd.h> // Pour la fonction write
 
-/*int main()
+void ft_putchar_fd(char c, int fd);
+
+/*int main() 
 {
-    const char str1[] = "four";
-    size_t result1 = ft_strlen(str1);
 
-    printf("Chaîne : %s\n", str1);
-    printf("Longueur : %zu\n", result1);
+    char ch = 'A';
+    ft_putchar_fd(ch, 1);
+
+
 }*/
