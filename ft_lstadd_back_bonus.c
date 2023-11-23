@@ -16,13 +16,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
+
+	new->next = NULL;
+
 	if (*lst)
 		ft_lstlast(*lst)->next = new;
 	else
 		*lst = new;
 }
 
-#include <stdio.h>
+
+/*#include <stdio.h>
 
 int main()
 {
@@ -44,7 +48,7 @@ int main()
 		printf("%s\n", (char *)current->content);
 		current = current->next;
 	}
-	printf("\n")
+	printf("\n");
 
 		t_list *node4 = ft_lstnew("nul");
 
@@ -60,4 +64,4 @@ int main()
 	}
 
 	return 0;
-}
+}*/

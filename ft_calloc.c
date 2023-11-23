@@ -12,23 +12,24 @@
 
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (nmemb == 0 || size == 0)
+	void	*ptr;
+
+	if (size && nmemb > __SIZE_MAX__ / size)
 	{
-		return NULL;
+		return (NULL);
 	}
 
-	void *ptr = malloc(nmemb * size);
+	ptr = malloc(nmemb * size);
 
-	if (ptr == NULL)
+	if (ptr == (NULL))
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	ft_memset(ptr, 0, nmemb * size);
-
-	return ptr;
+	return (ptr);
 }
 
 #include <stdlib.h>

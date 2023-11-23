@@ -28,9 +28,9 @@ t_list	*ft_lstnew(void *content)
 
 int main()
 {
-    t_list *node1 = ft_lstnew_("dragon");
-    t_list *node2 = ft_lstnew_("de");
-    t_list *node3 = ft_lstnew_("metal");
+    t_list *node1 = ft_lstnew("dragon");
+    t_list *node2 = ft_lstnew("de");
+    t_list *node3 = ft_lstnew("metal");
 
     node1->next = node2;
     node2->next = node3;
