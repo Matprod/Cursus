@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matprod <matprod@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:54:42 by matprod           #+#    #+#             */
-/*   Updated: 2023/11/29 16:54:56 by matprod          ###   ########.fr       */
+/*   Updated: 2023/12/04 21:10:29 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,28 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new[i] = '\0';
 	return (new);
 }
+
+/*#include <stdio.h>
+#include <stdlib.h>
+
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+
+int main(void) {
+    const char *original = "Hello, World!";
+    unsigned int i = 7;
+    size_t len = 5;
+
+    char *substr = ft_substr(original, i, len);
+
+    if (substr) {
+        printf("Original String: %s\n", original);
+        printf("substr (i=%u, len=%zu): %s\n", i, len, substr);
+
+        // Remember to free the allocated memory
+        free(substr);
+    } else {
+        printf("Error: Unable to create substr.\n");
+    }
+
+    return 0;
+}*/
