@@ -14,21 +14,21 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	char	*ret;
 
-	if (!s)
-		return (NULL);
-	i = ft_strlen(s);
-	while (i >= 0)
+	ret = NULL;
+	while (*s)
 	{
-		if (s[i] == (char) c)
-			return ((char *) s + i);
-		i--;
+		if (*s == (char)c)
+			ret = (char *)s;
+		s ++;
 	}
-	return (NULL);
+	if (*s == (char)c)
+		ret = (char *)s;
+	return (ret);
 }
 
-#include <stdio.h> 
+/*#include <stdio.h> 
 
 
 int main() {
@@ -53,4 +53,4 @@ int main() {
     printf("Résultat : %s\n", result2);
 
     return 0;
-}
+}*/

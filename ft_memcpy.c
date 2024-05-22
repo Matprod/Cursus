@@ -16,12 +16,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dst)
-		return (NULL);
 	i = 0;
+	if (n == 0 || dst == src)
+		return (dst);
 	while (i < n)
 	{
-		*(unsigned char*)(dst + i) = *(unsigned char*)(src + i);
+		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 		i++;
 	}
 	return (dst);
@@ -41,7 +41,7 @@ int main() {
 
     // Vérifier si la chaîne copiée est égale à la chaîne source
     if (strcmp(dst1, src1) != 0) {
-        printf("Test 1 a échoué : la chaîne copiée n'est pas égale à la chaîne source.\n");
+        printf(" 1 la chaîne copiée n'est pas égale à la chaîne source.\n");
         return 1;
     }
 
@@ -52,7 +52,7 @@ int main() {
 
     // Vérifier si la partie copiée est égale à la partie source
     if (memcmp(dst2, src2, 3 * sizeof(int)) != 0) {
-        printf("Test 2 a échoué : la partie copiée n'est pas égale à la partie source.\n");
+        printf("2 la partie copiée n'est pas égale à la partie source.\n");
         return 1; 
     }
 

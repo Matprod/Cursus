@@ -22,9 +22,9 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-#include <stdio.h> 
+/*#include <stdio.h> 
 
-/*int main()
+int main()
 {
     const char str1[] = "four";
     size_t result1 = ft_strlen(str1);

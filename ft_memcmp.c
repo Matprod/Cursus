@@ -38,7 +38,7 @@ int main() {
 
     // Vérifier si le résultat est égal à 0 (chaînes identiques)
     if (result1 != 0) {
-        printf("Test 1 a échoué : les chaînes identiques ne sont pas détectées correctement.\n");
+        printf("Test 1 a échoué\n");
         return 1;
     }
 
@@ -49,7 +49,7 @@ int main() {
 
     // Vérifier si le résultat est différent de 0 (chaînes différentes)
     if (result2 == 0) {
-        printf("Test 2 a échoué : les chaînes différentes ne sont pas détectées correctement.\n");
+        printf("Test 2 a échoué \n");
         return 1;
     }
 

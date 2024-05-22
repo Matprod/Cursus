@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvoisin <mvoisin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:03:44 by mvoisin           #+#    #+#             */
-/*   Updated: 2023/11/23 17:38:12 by mvoisin          ###   ########.fr       */
+/*   Updated: 2023/12/03 13:20:58 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *stock;
-	t_list *new;
+	t_list	*stock;
+	t_list	*new;
 
 	stock = NULL;
 	while (lst)
@@ -32,11 +32,8 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (stock);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include "libft.h"
-
-#include "libft.h"
-#include <stdio.h>
 
 // Fonction de test pour transformer le contenu d'un élément de liste
 void *test_function(void *content)
@@ -87,4 +84,4 @@ int main()
 	//printf("noeud = : %s\n", (char *)node2->content);
 	//printf("noeud = : %s\n", (char *)node3->content);
     return 0;
-}
+}*/

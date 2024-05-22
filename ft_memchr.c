@@ -36,7 +36,7 @@ int main() {
 
     // Vérifier si le pointeur résultat est égal au pointeur attendu
     if (result1 != strchr(str1, 'W')) {
-        printf("Test 1 a échoué : le caractère 'W' n'a pas été trouvé correctement.\n");
+        printf("Test 1 a échoué : le caractère 'W' n'a pas été trouvé.\n");
         return 1;
     }
 
@@ -44,9 +44,9 @@ int main() {
     char str2[] = "Hello, World!";
     char *result2 = (char *)ft_memchr(str2, 'X', strlen(str2));
 
-    // Vérifier si le pointeur résultat est égal au pointeur attendu (devrait être NULL)
+    // Vérifier si le pointeur résultat est égal au pointeur attendu
     if (result2 != NULL) {
-        printf("Test 2 a échoué : le caractère 'X' a été trouvé incorrectement.\n");
+        printf("Test 2 a échoué \n");
         return 1;
     }
 
@@ -56,7 +56,7 @@ int main() {
 
     // Vérifier si le pointeur résultat est égal à NULL (chaîne vide)
     if (result3 != NULL) {
-        printf("Test 3 a échoué : la recherche dans une chaîne vide n'a pas renvoyé NULL.\n");
+        printf("Test 3 a échoué : la recherche n'a pas renvoyé NULL.\n");
         return 1; 
     }
 

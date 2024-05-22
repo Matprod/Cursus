@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvoisin <mvoisin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 18:00:07 by mvoisin           #+#    #+#             */
-/*   Updated: 2023/11/23 13:29:11 by mvoisin          ###   ########.fr       */
+/*   Created: 2023/11/30 11:56:26 by Matprod           #+#    #+#             */
+/*   Updated: 2023/11/30 11:56:32 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -60,4 +59,4 @@ int main()
 	}
 
 	return 0;
-}
+}*/

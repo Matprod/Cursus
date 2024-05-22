@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvoisin <mvoisin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 13:41:10 by mvoisin           #+#    #+#             */
-/*   Updated: 2023/11/23 17:30:43 by mvoisin          ###   ########.fr       */
+/*   Created: 2023/11/30 11:57:03 by Matprod           #+#    #+#             */
+/*   Updated: 2023/11/30 11:57:12 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *ccbd;
+	t_list	*ccbd;
+
 	while (*lst)
 	{
 		ccbd = (*lst)->next;
@@ -22,7 +23,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		*lst = ccbd;
 	}
 }
-
 /*#include "stdio.h"
 void test(void *content)
 {
@@ -56,12 +56,8 @@ int main()
     second->next = third;
     third->next = NULL;
 
-    // Utilisation d'une boucle while pour supprimer tous les éléments de la liste
     t_list *current = head;
 	ft_lstclear(&current, *test);
 
     return 0;
 }*/
-
-
-

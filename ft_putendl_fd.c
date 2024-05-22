@@ -21,7 +21,6 @@ void	ft_putendl_fd(char *s, int fd)
 }
 
 /*int main() {
-    // Test : Écrire une chaîne de caractères suivie d'une nouvelle ligne dans la sortie standard (1)
     char str1[] = "Dragon de metal";
     ft_putendl_fd(str1, 1);
 

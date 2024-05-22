@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
+/*   By: matprod <matprod@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 07:40:53 by matprod           #+#    #+#             */
-/*   Updated: 2023/11/22 07:40:53 by matprod          ###   ########.fr       */
+/*   Created: 2023/11/30 11:40:22 by matprod           #+#    #+#             */
+/*   Updated: 2023/11/30 11:40:22 by matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	ft_lstsize(t_list *lst)
 	return (size);
 }
 
-#include "libft.h"
+/*#include "libft.h"
 #include <stdio.h>
 
-/*int main()
+int main()
 {
 
     t_list *node1 = ft_lstnew("Premier");

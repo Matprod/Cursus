@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 	return (array[++i] = NULL, array);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main(int grosca, char **caboudin)
@@ -131,4 +131,4 @@ int main(int grosca, char **caboudin)
 	// free(result2);
 
 	return 0;
-}
+}*/

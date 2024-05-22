@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matprod <matprod@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:52:25 by mvoisin           #+#    #+#             */
-/*   Updated: 2023/11/29 20:36:14 by matprod          ###   ########.fr       */
+/*   Created: 2023/11/29 16:52:42 by matprod           #+#    #+#             */
+/*   Updated: 2023/11/29 21:01:57 by matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+static void	print_nb(long nb, int fd)
 {
-	if (c >= 'A' && 'Z' >= c)
-		return (c + 'a' - 'A');
-	return (c);
+	if (nb / 10)
+	{
+		print_nb(nb / 10, fd);
+		print_nb(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + '0', fd);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
+
+	nb = n;
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	print_nb(nb, fd);
 }

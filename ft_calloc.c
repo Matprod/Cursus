@@ -17,22 +17,15 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 
 	if (size && nmemb > __SIZE_MAX__ / size)
-	{
 		return (NULL);
-	}
-
 	ptr = malloc(nmemb * size);
-
 	if (ptr == (NULL))
-	{
 		return (NULL);
-	}
-
 	ft_memset(ptr, 0, nmemb * size);
 	return (ptr);
 }
 
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 
@@ -76,4 +69,4 @@ int main()
 
 	printf("Tous les tests ont réussi.\n");
 	return 0;
-}
+}*/

@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main()
@@ -65,7 +65,6 @@ int main()
 
 	free(result1);
 
-	// Test : Supprimer les caractères spécifiés au début et à la fin d'une chaîne
 	const char str2[] = "xxdragon xdex metalxx";
 	const char set2[] = "x";
 	char *result2 = ft_strtrim(str2, set2);
@@ -78,4 +77,4 @@ int main()
 	free(result2);
 
 	return 0;
-}
+}*/

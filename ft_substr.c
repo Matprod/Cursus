@@ -3,43 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matprod <matprod@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 20:09:25 by matprod           #+#    #+#             */
-/*   Updated: 2023/11/24 21:38:08 by matprod          ###   ########.fr       */
+/*   Created: 2023/11/29 16:54:42 by matprod           #+#    #+#             */
+/*   Updated: 2023/12/04 21:10:29 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*new;
-	char	*new_start = NULL;
+	char			*new;
+	unsigned int	i;
 
-	while (start-- > 0 && *s)
-		s++;
+	if (start >= ft_strlen(s))
+		len = 0;
+	else if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
 	new = malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
-	new_start = new; 
-	while (len-- > 0 && *s)
+	i = 0;
+	while (start + i < ft_strlen(s) && i < len)
 	{
-		*new = *s;
-		new ++;
-		s++;
+		new[i] = s[start + i];
+		i++;
 	}
-	*new = '\0'; 
-	return new_start;
+	new[i] = '\0';
+	return (new);
 }
 
 /*#include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-	char *str = "dragon de metal";
-	char *new = ft_substr(str, 14, 16);
-	printf("%s", new);
-	free(new); 
-	return 0;
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+
+int main(void) {
+    const char *original = "Hello, World!";
+    unsigned int i = 7;
+    size_t len = 5;
+
+    char *substr = ft_substr(original, i, len);
+
+    if (substr) {
+        printf("Original String: %s\n", original);
+        printf("substr (i=%u, len=%zu): %s\n", i, len, substr);
+
+        // Remember to free the allocated memory
+        free(substr);
+    } else {
+        printf("Error: Unable to create substr.\n");
+    }
+
+    return 0;
 }*/

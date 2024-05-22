@@ -17,11 +17,11 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-#include <unistd.h> // Pour la fonction write
+/*#include <unistd.h> // Pour la fonction write
 
 void ft_putchar_fd(char c, int fd);
 
-/*int main() 
+int main() 
 {
 
     char ch = 'A';

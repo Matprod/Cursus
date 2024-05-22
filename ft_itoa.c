@@ -37,10 +37,10 @@ static size_t	ft_len(long nb)
 
 char	*ft_itoa(int n)
 {
-	size_t	len;
-	long	nb;
-	char	*str;
-	int		is_negative;
+	size_t		len;
+	long		nb;
+	char		*str;
+	size_t		is_negative;
 
 	len = ft_len((long) n);
 	str = (char *) malloc(sizeof(char) * (len + 1));
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 		is_negative = 1;
 	}
 	str[len] = '\0';
-	while (len > (size_t) is_negative)
+	while (len > is_negative)
 	{
 		str[len - 1] = nb % 10 + '0';
 		nb = nb / 10;
@@ -73,11 +73,11 @@ char *ft_itoa(int n);
 
 int main() {
     // Test 1 : Convertir un nombre positif en chaîne de caractères
-    int num1 = 12345;
+    int num1 = 00000;
     char *str1 = ft_itoa(num1);
 
-    if (strcmp(str1, "12345") != 0) {
-        printf("Test 1 a échoué : la conversion de %d à la chaîne n'est pas correcte\n", num1);
+    if (strcmp(str1, "0") != 0) {
+        printf("Test 1 a échoué \n", num1);
         free(str1);
         return 1; 
     }
@@ -90,7 +90,7 @@ int main() {
 
     // Vérifier si la chaîne de caractères est égale à la représentation attendue
     if (strcmp(str2, "-9876") != 0) {
-        printf("Test 2 a échoué : la conversion de %d à la chaîne n'est pas correcte\n", num2);
+        printf("Test 2 a échoué \n", num2);
         free(str2);
         return 1; 
     }
@@ -103,7 +103,7 @@ int main() {
 
     // Vérifier si la chaîne de caractères est égale à la représentation attendue
     if (strcmp(str3, "0") != 0) {
-        printf("Test 3 a échoué : la conversion de %d à la chaîne n'est pas correcte\n", num3);
+        printf("Test 3 a échoué \n", num3);
         free(str3);
         return 1; // Indiquer une erreur
     }

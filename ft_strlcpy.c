@@ -31,12 +31,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (i);
 }
 
-#include <stdio.h> 
+/*#include <stdio.h> 
 
 
 int main()
 {
-    // Test : Copier une chaîne avec une taille de destination suffisamment grande
+    // Test : Copier une chaîne avec une taille de destination grande
     char dest1[20];
     const char src1[] = "Dragon de metal";
     size_t result1 = ft_strlcpy(dest1, src1, sizeof(dest1));
@@ -55,4 +55,4 @@ int main()
     printf("Taille totale : %zu\n", result2);
 
     return 0;
-}
+}*/

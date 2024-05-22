@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvoisin <mvoisin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: matprod <matprod@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:30:15 by mvoisin           #+#    #+#             */
-/*   Updated: 2023/11/23 17:30:31 by mvoisin          ###   ########.fr       */
+/*   Updated: 2023/11/29 12:17:06 by matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
-
-
-
 /*#include "stdio.h"
 void test(void *content)
 {
@@ -55,7 +52,6 @@ int main()
     second->next = third;
     third->next = NULL;
 
-    // Utilisation d'une boucle while pour supprimer tous les éléments de la liste
     t_list *current = head;
     while (current != NULL) {
         t_list *next = current->next;

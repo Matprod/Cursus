@@ -12,29 +12,27 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s)
 {
-	int		i;
-	char	*new;
+	char			*dup_str;
+	unsigned int	index;
+	unsigned int	length;
 
-	if(!src)
-		return NULL;
-
-	new = malloc(sizeof(char) * (ft_strlen(src) + 1));
-
-	if (!new)
-		return NULL;
-	i = 0;
-	while (src[i])
+	length = ft_strlen(s);
+	dup_str = malloc((length + 1) * sizeof(char));
+	if (!dup_str)
+		return (NULL);
+	index = 0;
+	while (index < length)
 	{
-		new[i] = src[i];
-		i++;
+		dup_str[index] = s[index];
+		index ++;
 	}
-	new[i] = '\0';
-	return (new);
+	dup_str[index] = '\0';
+	return (dup_str);
 }
 
-#include <stdio.h> // Pour la fonction printf
+/*#include <stdio.h> // Pour la fonction printf
 #include <stdlib.h> // Pour la fonction free
 #include <string.h> // Pour la fonction strcmp
 
@@ -72,4 +70,4 @@ int main()
     free(dup_str2);
 
     return 0;
-}
+}*/
